@@ -80,7 +80,34 @@ h3 {
 }
 
 p {
-  max-width: 32em;
+  max-width: 30em;
+}
+
+ol {
+  max-width: 30em;
+}
+
+ul p {
+  margin-bottom: .5em;
+}
+
+ul ul {
+  margin-top: 0;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
+code {
+  font-family: Menlo, monospace;
+}
+
+blockquote {
+  margin: 0;
+}
+
+blockquote + p {
+  margin-left: 1.5em;
+  font-weight: 700;
 }
 
 .internship__header {
@@ -88,6 +115,10 @@ p {
 	flex-flow: column nowrap;
 	align-items: flex-start;
 	padding: 0 5vw;
+
+  @media screen and (min-width: 33.125em) {
+    padding: 0 0 0 10vw;
+  }
 }
 
 .internship__header h1 {
@@ -105,7 +136,6 @@ p {
     text-shadow: cartoon-shadows(10, 1, $pink, black);
     text-transform: uppercase;
     margin-bottom: .25em;
-    margin-left: 5vw;
   }
 
   @media (min-width: 56.25em) {
@@ -122,21 +152,18 @@ p {
   color: #000105;
   flex: 1 1 auto;
   width: 40vw;
-  margin-bottom: 1.5em;
-
-  @media (min-width: 33.125em) {
-    margin-left: 5vw;
-  }
+  margin: 1.5em 0;
 }
 
 .internship__body {
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
-  padding: 0 5vw;
+  padding: 0 5vw 0 0;
 
-  @media (min-width: 33.125em) {
+  @media screen and (min-width: 33.125em) {
     margin: 0 5vw;
+    padding: 0 5vw;
   }
 }
 
@@ -145,17 +172,52 @@ p {
   font-weight: 600;
   flex-basis: 100%;
   margin-bottom: 0;
+  margin-left: 5vw;
+
+  @media screen and (min-width: 33.125em) {
+    margin-left: 0;
+  }
 }
 
 .internship__meta {
   flex-basis: 100%;
 	margin-bottom: 1.5em;
+  margin-left: 5vw;
+
+  @media screen and (min-width: 33.125em) {
+    margin-left: 0;
+  }
 }
 
 .internship__section {
 	background: white;
   padding: 2vw 4vw;
-  margin-bottom: 2vw;
+  margin-bottom: 5vw;
+}
+
+.internship__section--work {
+  .internship__subsection {
+    margin-top: 3em;
+
+    @media screen and (min-width: 56.25em) {
+      columns: 2;
+    }
+  }
+}
+
+.internship__section--quality {
+
+}
+
+.internship__section--takeaway {
+  @media screen and (min-width: 56.25em) {
+    columns: 2;
+    column-gap: 3em;
+  }
+}
+
+.internship__section-subtitle {
+  column-span: all;
 }
 
 .internship__quote {
@@ -163,9 +225,20 @@ p {
   font-weight: 300;
 }
 
+.internship__video video {
+  width: 100%;
+  height: auto;
+}
+
 .internship__video-caption {
   font-style: italic;
   text-align: center;
+}
+
+.contact {
+  background: white;
+  padding: 2vw 4vw;
+  margin-bottom: 5vw;
 }
 
 .accessibility {

@@ -30,13 +30,13 @@
   		<header class="internship__header" role="banner">
   			<h1>All aboard the internship at <span class="accessibility"> CLEVER°FRANKE</span></h1>
 
-        <svg class="internship__logo">
+        <svg class="internship__logo" viewBox="0 0 160 40">
           <use xlink:href="#cf-logo" />
         </svg>
   		</header>
 
   		<main class="internship__body">
-  			<p class="internship__leader">During an internship of only 10 weeks, I learned more about front-end development than I did in the four years before.</p>
+  			<p class="internship__leader">During an internship of only 10 weeks, I learned more about JavaScript than I did in the four years before.</p>
   			<p class="internship__meta">Written by Nick Rutten – 20 August 2016</p>
   			<section class="internship__section internship__section--introduction">
   				<h2 class="internship__section-title">Introducing</h2>
@@ -48,31 +48,110 @@
         <section class="internship__section internship__section--work">
           <h2 class="internship__section-title">Work &amp; projects</h2>
           <p>During my internship at CLEVER°FRANKE I worked on two projects: Taste Index and DDOT.</p>
-          <h3 class="internship__section-subtitle">Taste Index</h3>
-          <p>For Taste Index I made a prototype of a 3D data visualisation in <a href="http://threejs.org/">Three.js</a>, using the <a href="https://www.contentful.com/">Contentful</a> API. It is used to visualize the tastes of a group of people, because as the Dutch say:</p>
+          <section class="internship__subsection">
+            <h3 class="internship__section-subtitle">Taste Index</h3>
+            <p>For Taste Index I made a prototype of a 3D data visualisation in <a href="http://threejs.org/">Three.js</a>, using the <a href="https://www.contentful.com/">Contentful</a> API. It is used to visualize the tastes of a group of people, because as the Dutch say:</p>
 
-          <blockquote class="internship__quote">
-            <p>“Smaken verschillen”</p>
-          </blockquote>
+            <blockquote class="internship__quote">
+              <p>“Smaken verschillen”</p>
+            </blockquote>
 
-          <p>and that is a fun thing to visualize. The 3D visualisation is now being tested in wine tastings before being moved into physical retail locations.</p>
-          <p>Taste Index motivates people to talk about their tastes, about the wines they like, and the differences between each other because they have a visual trigger to do so. The <a href="http://www.tasteindex.com/">Taste Index website</a> holds more information about the project.</p>
-          <p>The project and the way it calculates your flavour profile using a series of questions is based on the research of Prof. Dr. Peter Klosse, who has been researching peoples' tastes for over 25 years. Additionally, I based the 3D visualisation on the way Klosse presents his data in research, made as accessible and readable as possible for its users.</p>
-          <p>Three.js was the obvious choice as the technology for this project. It is one of the few WebGL Javascript libraries mature enough to use in production. In addition to that, Three.js has the largest community. WebGL is such a specific part of the front-end ecosystem that help is scarce. Having a big community around a library is priceless in the kind of edge cases CLEVER°FRANKE is often dealing with.</p>
+            <p>and that is a fun thing to visualize. The 3D visualisation is now being tested in wine tastings before being moved into physical retail locations.</p>
+            <p>Taste Index motivates people to talk about their tastes, about the wines they like, and the differences between each other because they have a visual trigger to do so. The <a href="http://www.tasteindex.com/">Taste Index website</a> holds more information about the project.</p>
+            <p>The project and the way it calculates your flavour profile using a series of questions is based on the research of Prof. Dr. Peter Klosse, who has been researching peoples' tastes for over 25 years. Additionally, I based the 3D visualisation on the way Klosse presents his data in research, made as accessible and readable as possible for its users.</p>
+            <p>Three.js was the obvious choice as the technology for this project. It is one of the few WebGL Javascript libraries mature enough to use in production. In addition to that, Three.js has the largest community. WebGL is such a specific part of the front-end ecosystem that help is scarce. Having a big community around a library is priceless in the kind of edge cases CLEVER°FRANKE is often dealing with. Three.js abstracts WebGL nicely into Javascript. You only have to get into <dfn><abbr title="OpenGL Shading Language">GLSL</abbr></dfn> when you want to write custom shaders for WebGL objects.</p>
 
-          <div class="internship__video">
-            <video controls style="width:640px;height:360px;" poster="images/taste-index-placeholder.png" preload="auto">
-              <source src="video/taste-index.webmhd.webm"
-                      type='video/webm;codecs="vp8, vorbis"'>
-              <source src="video/taste-index.mp4">
-            </video>
-            <p class="internship__video-caption">The 3D visualisation in action.</p>
-          </div>
+            <div class="internship__video">
+              <video controls poster="images/taste-index-placeholder.png" preload="auto">
+                <source src="video/taste-index.webmhd.webm"
+                        type='video/webm;codecs="vp8, vorbis"'>
+                <source src="video/taste-index.mp4">
+              </video>
+              <p class="internship__video-caption">The 3D visualisation in action.</p>
+            </div>
 
-          <h3 class="internship__section-subtitle">DDOT</h3>
-          <p>DDOT is at the moment of writing still on-going. For the Department of Transportation of Washington DC, we are creating interactive map visualisations, using <a href="https://facebook.github.io/react/">React</a>, Redux and <a href="https://d3js.org/">D3.js</a>. This is done in coöperation with <a href="http://www.cattlab.umd.edu/">CATT Lab</a> and coördinated by <a href="http://www.kittelson.com/">Kittelson</a>.</p>
+            <p>Three.js tries to ensure 60FPS in the browser by using <code>requestAnimationFrame();</code> to run code. That means you have to be smart about what you call when. Three.js is going to continue on like a herd of mad buffalo. If you call too much, your animation is going to get choppy. Debouncing some events, especially at the start of the animation helped a lot of issues with low frame rates. The Chrome developer tools timeline was indispensable and I've learned to use it in great detail.</p>
+          </section>
 
+          <section class="internship__subsection">
+            <h3 class="internship__section-subtitle">DDOT</h3>
+            <p>DDOT is at the moment of writing still on-going. For the <a href="http://ddot.dc.gov/">District Department of Transportation of Washington DC</a>, we are creating interactive map visualisations, using <a href="https://facebook.github.io/react/">React</a>, Redux and <a href="https://d3js.org/">D3.js</a>. This is done in coöperation with <a href="http://www.cattlab.umd.edu/">CATT Lab</a> and coördinated by <a href="http://www.kittelson.com/">Kittelson</a>.</p>
+            <p>The maps will primarily be used by decision makers in Washington DC to be and stay informed about the state of the infrastructure in Washington DC. These decision makers are well informed and versed in the language that is used when talking about the infrastructure of the capitol city. Because of that, the statistics that can be presented match a higher level of understanding of the matter. A consequence of that is complicated maps. This is one of the reasons that makes this project such a challenge on the front-end. Data-sets of over 25.000 entries are another one.</p>
+            <p>How we deal with that? React and D3.js are our dearest friends. React because it helps so much in keeping track of the state of the UI of the application. The maps built have myriad switches, toggles and layers. React is basically a UI state machine. You feed it data, and React presents that to the user based on the state of their individual client-side application. D3.js is great because it actually renders the maps. D3.js is the prime library for data visualisation on the web. <a href="https://github.com/d3/d3-geo-projection/">Maps are not</a> <a href="https://www.jasondavies.com/maps/waterman-butterfly/">a trick</a> we have to teach it.</p>
+            <p><em>This application will be released in the near future. As such, it's design and architectural details are kept under wraps until the final release. Alas, no code, screenshots or movies.</em></p>
+            <h4>A meeting</h4>
+            <p>As part of the DDOT projects I've been present at several meetings with CATT Lab. CATT (Center for Advanced Transportation Technology) Lab is a subsidiary of the University of Maryland. They mainly create desktop software for dealing with infrastructure and other huge datasets. These meetings dealt with coördinating application architecture and technical developer-to-developer conversations and as such have been a great addition to my internship by being able to partake in discussion and conversation with a developer team on the other side of the world.</p>
+            <p>CLEVER°FRANKE is among others, responsible for the quality of design and front-end as well as performance in this project. As a party that is experienced with complex React.js projects, CATT Lab looks our way for advice on data binding in React (one way: down) and data processing by D3.js.</p>
+            <p>These talks are weekly no matter what. Usually, the latest pull requests from git are discussed. There is often time for questions back and forth if needed. Keeping in touch like this on a project of this scope is hugely important for the succesful completion of it.</p>
+          </section>
         </section>
+
+        <section class="internship__section internship__section--quality">
+          <h2 class="internship__section-subtitle">The Quality Control Department</h2>
+          <p>This section shows the minimum quality products made by a front-end developer at my level should adhere to. These were drafted with the help of Jan Hoogeveen, lead front-end developer at CLEVER°FRANKE.</p>
+          <ul>
+            <li><p>A completed product (PR, branch, piece of code) should work on:</p>
+              <ul>
+                <li>Microsoft Edge</li>
+                <li>Microsoft Internet Explorer 11</li>
+                <li>Google Chrome (last 2 versions)</li>
+                <li>Mozilla Firefox (last 2 versions)</li>
+                <li>Opera (last 2 versions)</li>
+                <li>Safari 8 & 9</li>
+              </ul>
+            </li>
+            <li><p>The product meets:</p>
+              <ul>
+                <li>the intent of the design</li>
+                <li>is tested and approved by the designer</li>
+              </ul>
+            </li>
+            <li>The product has a relevant and succeeding test suite.</li>
+            <li>The product meets the linting requirements.</li>
+            <li>The product is free of (critical) bugs before release.</li>
+            <li>The code is well readable and brings about its' intention.</li>
+            <li>The code is transferable to another developer.</li>
+            <li>The code is documented with the JSDoc specification.</li>
+          </ul>
+        </section>
+
+        <section class="internship__section internship__section--testimonial">
+          <h2 class="internship__section-subtitle">He said, she said&hellip;</h2>
+          <blockquote lang="nl">
+            <p>We hebben Nick leren kennen als een ontzettend gemotiveerde en serieuze student. Hij is niet alleen prettig in de omgang, ook leert hij snel en staat hij open voor allerlei nieuwe technieken. Zijn enthousiasme is aanstekelijk!</p>
+            <p>Uit de samenwerking met alle teamleden is gebleken dat Nick al op een prima kwaliteitsniveau functioneert. Hij heeft tijdens zijn stage meegewerkt aan een groot klantproject (programmeren in React) en een kleiner intern project (3D visualisatie) en heeft dat naar tevredenheid gedaan.</p>
+            <p>Niet voor niets hebben we hem aangeboden om direct na zijn stage parttime bij ons te blijven. We zijn blij dat Nick nu een permanent onderdeel uitmaakt van ons team.</p>
+          </blockquote>
+          <p>– Dennis Ketel</p>
+        </section>
+
+        <section class="internship__section internship__section--takeaway">
+          <h2 class="internship__section-subtitle">The takeaway</h2>
+          <p>So the main thing I've learned from these both projects has to be to RTFM. Read the fucking manual. React, D3.js as well as Three.js have extensive documentations. Read those with attention and concentration and you are rewarded with an understanding of the concepts they deal with.</p>
+          <p>Before starting this internship, I set myself three goals:</p>
+          <ol>
+            <li>
+              <p><strong>Learn a new JavaScript framework to see what is required to learn new techniques, to learn more about JavaScript as a language and it's latest iteration ES6 specifically.</strong></p>
+              <p>I achieved this goal by learning about React. Because most React stacks use <a href="http://babeljs.io/">Babel</a>, which compiles ES6 to the current version of JavaScript. What mainly goes into it is motivation. Apart from that, you read. And read. And read some more until you feel you start to see the quality of blogs, opinions and thoughts scattered around about the topic you're learning. Then use it and also read some more, because you are probably horribly misinformed.</p>
+            </li>
+            <li>
+              <p><strong>Learn how to convey changes in data to a user in real time, without any action on their part.</strong></p>
+              <p>This is a learning goal with lots and lots of possible different contexts, applications and solutions. In the end, I solved it by using the new Fetch API in the Taste Index cube. It tries to get new data from the Contentful API every 5000ms by using a simple <code>setTimeout()</code>. If there is new data, Three.js will save it in LocalStorage and inject that into the currently rendered scene without reload. <code>fetch()</code> is great and so much easier to use than <code>XMLHttpRequest()</code> of which the casing alone gives me a splitting headache everytime I have to type it.</p>
+            </li>
+            <li>
+              <p><strong>Learn how to explain the added value of a (usually intensive) UX/designprocess and high quality design and front-end to a potential/internal customer or colleague.</strong></p>
+              <p>This was one of the harder goals I set myself, because it has such a potentially huge context. In the end, I took it up with one of C°F's project managers. She gave me some very useful practical tips as well as advice about how to communicate when talking with customers. <em>Talk their language.</em> <em>Take the pain now, and improve your life in the future.</em> <em>Make project goals measurable for your customer.</em> <em>Use metaphores in your conversations about UX.</em> This goal might well be one of those you can spend years and years perfecting the answer too.</p>
+            </li>
+          </ol>
+
+          <p>In addition to these goals, I've drawn some conclusions for myself. As you've probably noticed, I've mainly spent my internship doing front-end development. After that I still view myself as a T-shaped designer. I do feel very comfortable in the front-end and would like to pursue a deeper knowledge of front-end development. I would make front-end development the stem of my T, so to speak. That doesn't diminish my interest in design and UX. My opinion is that designing for the browser(s) should be preferably done in the medium it is meant for: <em>the browser.</em> I'm sure doing so will make me a stronger designer because it is, in a way, getting very intimate with your canvas. I'm going to follow a web development-focused minor this coming year. The courses I'm picking will be primarily focused on front-end development, visual design and user experience design as I feel that is the core of our business. Thereby I'll skip the more content-, marketing- or business-focused classes being offerend as they do not appeal to me.</p>
+        </section>
+        <footer>
+          <section class="contact">
+            <p>This was written by <a href="//nickrttn.me/">Nick Rutten</a>, about his internship at <a href="
+            //cleverfranke.com/">CLEVER°FRANKE</a>. Come find me on Twitter as <a href="//twitter.com/nickrttn">@nickrttn</a> or send me an email at <a href="mailto:hello@nickrttn.me">hello@nickrttn.me</a>.</p>
+          </section>
+      </footer>
   		</main>
   	</article>
 
